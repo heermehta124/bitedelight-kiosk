@@ -1,6 +1,6 @@
 # 🍔 BiteDelight - Self-Order Kiosk
 
-**BiteDelight** is a web-based food ordering kiosk system built using PHP, HTML, CSS, and JavaScript. Designed to mimic self-service ordering stations found in restaurants, this project offers users a smooth and interactive way to browse the menu, add items, and proceed to payment.
+**BiteDelight** is a web-based food ordering kiosk system built using PHP, HTML, CSS, Bootstrap and JavaScript. Designed to mimic self-service ordering stations found in restaurants, this project offers users a smooth and interactive way to browse the menu, add items, and proceed to payment.
 
 🌐 **Live Site**: [https://kiosk.lovestoblog.com](https://kiosk.lovestoblog.com)
 
