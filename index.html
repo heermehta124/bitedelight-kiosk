@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self-Ordering Kiosk original</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Kiosk Container -->
+    <div class="container-fluid kiosk-container">
+        <!-- Header Section -->
+        <header class="heading animate-text">
+            <p>BiteDelight</p>
+        </header>
+
+        <!-- Main Content Section -->
+        <div class="row g-0">
+            <!-- Menu Categories -->
+            <div class="col-md-2 col-12 bg-warning p-3 text-center menu-categories">
+                <ul class="list-unsstyled">
+                    <li class="mb-4 menu">Menu:</li>
+                    <li class="mb-4"><a href="#burger" class="text-dark">Burgers</a></li>
+                    <li class="mb-4"><a href="#fries" class="text-dark">Fries & Sides</a></li>
+                    <li class="mb-4"><a href="#coffee" class="text-dark">Coffee & Beverages</a></li>
+                    <li class="mb-4"><a href="#cake" class="text-dark">Cakes- Brownies</a></li>
+                    <li class="mb-4"><a href="#dessert" class="text-dark">Dessert</a></li>
+                    <li class="mb-4">
+                        <div class="minitotal"><strong>Total:&nbsp;&nbsp;0 ₹</strong></div>
+                    </li>
+                    <li class="mb-4 viewBill"><a href="#order-summary">View Bill</a></li>
+
+                </ul>
+            </div>
+
+            <!-- Menu Items -->
+            <div class="col-md-10 col-12 py-3 menu-items">
+                <div class="row row-cols-2 row-cols-md-5 g-3" id="burger">
+                    <div class="col">
+                        <div class="card text-center">
+                            <img src="images/Crispy Veggie Burger.png" class="card-img-top" alt="Crispy Veggie Burger">
+                            <div class="card-body">
+                                <p class="card-text">Crispy Veggie Burger</p>
+                                <p>₹ 200</p>
+                                <button class="btn btn-primary mt-2"
+                                    onclick="addToOrder('Crispy Veggie Burger', 200,this)">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center">
+                            <img src="images/Mexican McAloo Tikki Burger NONG.png" class="card-img-top"
+                                alt="Mexican McAloo Tikki Burger NONG">
+                            <div class="card-body">
+                                <p class="card-text">Mexican McAloo Tikki Burger NONG</p>
+                                <p>₹ 75</p>
+                                <button class="btn btn-primary"
+                                    onclick="addToOrder('Mexican McAloo Tikki Burger NONG', 75,this)">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center">
+                            <img src="images/McAloo Tikki Burger NONG.png" class="card-img-top"
+                                alt="McAloo Tikki Burger NONG">
+                            <div class="card-body">
+                                <p class="card-text">McAloo Tikki Burger NONG</p>
+                                <p>₹ 75</p>
+                                <button class="btn btn-primary"
+                                    onclick="addToOrder('McAloo Tikki Burger NONG', 75,this)">Add</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card text-center">
+                            <img src="images/Veg Maharaja Mac Burger.png" class="card-img-top"
+                                alt="Veg Maharaja Mac Burger">
+                            <div class="card-body">
+                                <p class="card-text">Veg Maharaja Mac Burger</p>
+                                <p>₹ 225</p>
+                                <button class="btn btn-primary"
+                                    onclick="addToOrder('Veg Maharaja Mac Burger', 225,this)">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center">
+                            <img src="images/McVeggie Double Patty Burger.png" class="card-img-top"
+                                alt="McVeggie Double Patty Burger">
+                            <div class="card-body">
+                                <p class="card-text">McVeggie Double Patty</p>
+                                <p>₹ 188</p>
+                                <button class="btn btn-primary"
+                                    onclick="addToOrder('McVeggie Double Patty Burger', 188,this)">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center">
+                            <img src="images/McSpicy Deluxe Paneer Burger.png" class="card-img-top"
+                                alt="McSpicy Deluxe Paneer Burger">
+                            <div class="card-body">
+                                <p class="card-text">McSpicy Deluxe Paneer</p>
+                                <p>₹ 234</p>
+                                <button class="btn btn-primary"
+                                    onclick="addToOrder('McSpicy Deluxe Paneer Burger', 234,this)">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center">
+                            <img src="images/Corn & Cheese Burger.png" class="card-img-top" alt="Corn & Cheese Burger">
+                            <div class="card-body">
+                                <p class="card-text">Corn & Cheese Burger</p>
+                                <p>₹ 155</p>
+                                <button class="btn btn-primary"
+                                    onclick="addToOrder('Corn & Cheese Burger', 155,this)">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center">
+                            <img src="images/McVeggie Burger.png" class="card-img-top" alt="McVeggie Burger">
+                            <div class="card-body">
+                                <p class="card-text">McVeggie Burger</p>
+                                <p>₹ 150</p>
+                                <button class="btn btn-primary"
+                                    onclick="addToOrder('McVeggie Burger', 150,this)">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center">
+                            <img src="images/McSpicy Paneer Burger.png" class="card-img-top"
+                                alt="McSpicy Paneer Burger">
+                            <div class="card-body">
+                                <p class="card-text">McSpicy Paneer Burger</p>
+                                <p>₹ 215</p>
+                                <button class="btn btn-primary"
+                                    onclick="addToOrder('McSpicy Paneer Burger', 215,this)">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center">
+                            <img src="images/non veg burger.jpeg" class="card-img-top" alt="non vrg burger">
+                            <div class="card-body">
+                                <p class="card-text"><br>NON-Veg spicy burger</p>
+                                <p>₹ 210</p>
+                                <button class="btn btn-primary"
+                                    onclick="addToOrder('McAloo Tikki Burger NONG', 75,this)">Add</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row row-cols-2 row-cols-md-5 g-3" id="fries">
+                    <div class="col">
+                        <div class="card text-center">
+                            <img src="images/Fries (M) + Piri Piri Mix.png" class="card-img-top"
+                                alt="Fries (M) + Piri Piri Mix">
+                            <div class="card-body">
+                                <p class="card-text">Fries (M) + Piri Piri Mix</p>
+                                <p>₹ 123</p>
+                                <button class="btn btn-primary"
+                                    onclick="addToOrder('Fries (M) + Piri Piri Mix', 123,this)">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center">
+                            <img src="images/Salsa Cheese Fries.png" class="card-img-top" alt="Salsa Cheese Fries">
+                            <div class="card-body">
+                                <p class="card-text">Salsa Cheese Fries</p>
+                                <p>₹ 136</p>
+                                <button class="btn btn-primary"
+                                    onclick="addToOrder('Salsa Cheese Fries', 136,this)">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center">
+                            <img src="images/Fries (Large).png" class="card-img-top" alt="Fries (Large)">
+                            <div class="card-body">
+                                <p class="card-text">Fries (Large)</p>
+                                <p>₹ 140</p>
+                                <button class="btn btn-primary"
+                                    onclick="addToOrder('Fries (Large)', 140,this)">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center">
+                            <img src="images/Fries (Medium).png" class="card-img-top" alt="Fries (Medium)">
+                            <div class="card-body">
+                                <p class="card-text">Fries (Medium)</p>
+                                <p>₹ 120</p>
+                                <button class="btn btn-primary"
+                                    onclick="addToOrder('Fries (Medium)', 120,this)">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center">
+                            <img src="images/Fries (Regular).png" class="card-img-top" alt="Fries (Regular)">
+                            <div class="card-body">
+                                <p class="card-text">Fries (Regular)</p>
+                                <p>₹ 79</p>
+                                <button class="btn btn-primary"
+                                    onclick="addToOrder('Fries (Regular)', 79,this)">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center">
+                            <img src="images/Classic Cheese Fries.png" class="card-img-top" alt="Classic Cheese Fries">
+                            <div class="card-body">
+                                <p class="card-text">Classic Cheese Fries</p>
+                                <p>₹ 157</p>
+                                <button class="btn btn-primary"
+                                    onclick="addToOrder('Classic Cheese Fries', 157,this)">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center">
+                            <img src="images/Veg Pizza McPuff.png" class="card-img-top" alt="Veg Pizza McPuff">
+                            <div class="card-body">
+                                <p class="card-text">Veg Pizza McPuff</p>
+                                <p>₹ 66</p>
+                                <button class="btn btn-primary"
+                                    onclick="addToOrder('Veg Pizza McPuff', 66,this)">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center">
+                            <img src="images/Classic Corn Cup.png" class="card-img-top" alt="Classic Corn Cup">
+                            <div class="card-body">
+                                <p class="card-text">Classic Corn Cup</p>
+                                <p>₹ 90</p>
+                                <button class="btn btn-primary add "
+                                    onclick="addToOrder('Classic Corn Cup', 90,this)">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center">
+                            <img src="images/mustard souce.jpeg" class="card-img-top" alt="Mustard Sauce">
+                            <div class="card-body">
+                                <p class="card-text">Mustard Sauce</p>
+                                <p>₹ 19</p>
+                                <button class="btn btn-primary"
+                                    onclick="addToOrder('Mustard Sauce', 19,this)">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center">
+                            <img src="images/Barbeque Sauce.png" class="card-img-top" alt="Barbeque Sauce">
+                            <div class="card-body">
+                                <p class="card-text">Barbeque Sauce</p>
+                                <p>₹ 19</p>
+                                <button class="btn btn-primary"
+                                    onclick="addToOrder('Barbeque Sauce', 19,this)">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center">
+                            <img src="images/Chilli Sauce Sachet.png" class="card-img-top" alt="Chilli Sauce Sachet">
+                            <div class="card-body">
+                                <p class="card-text">Chilli Sauce Sachet</p>
+                                <p>₹ 2</p>
+                                <button class="btn btn-primary"
+                                    onclick="addToOrder('Chilli Sauce Sachet', 2,this)">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center">
+                            <img src="images/Piri Piri Spice Mix.png" class="card-img-top" alt="Piri Piri Spice Mix">
+                            <div class="card-body">
+                                <p class="card-text">Piri Piri Spice Mix</p>
+                                <p>₹ 24</p>
+                                <button class="btn btn-primary"
+                                    onclick="addToOrder('Piri Piri Spice Mix', 24,this)">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row row-cols-2 row-cols-md-5 g-3" id="coffee">
+                    <div class="col">
+                        <div class="card text-center">
+                            <img src="images/Iced Coffee with Cinammon Spice.png" class="card-img-top"
+                                alt="Iced Coffee with Cinammon Spice">
+                            <div class="card-body">
+                                <p class="card-text">Iced Coffee with Cinammon</p>
+                                <p>₹ 229</p>
+                                <button class="btn btn-primary"
+                                    onclick="addToOrder('Iced Coffee with Cinammon Spice', 229,this)">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center">
+                            <img src="images/Classic Coffee Regular with Cinammon Spice.png" class="card-img-top"
+                                alt="Classic Coffee Regular with Cinammon Spice">
+                            <div class="card-body">
+                                <p class="card-text">Classic Coffee Regular </p>
+                                <p>₹ 237</p>
+                                <button class="btn btn-primary"
+                                    onclick="addToOrder('Classic Coffee Regular with Cinammon Spice', 237,this)">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center">
+                            <img src="images/Iced Coffee with Hazelnut.png" class="card-img-top"
+                                alt="Iced Coffee with Hazelnut">
+                            <div class="card-body">
+                                <p class="card-text">Iced Coffee with Hazelnut</p>
+                                <p>₹ 229</p>
+                                <button class="btn btn-primary"
+                                    onclick="addToOrder('Iced Coffee with Hazelnut', 229,this)">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center">
+                            <img src="images/Hot Chocolate (S).png" class="card-img-top" alt="Hot Chocolate (S)">
+                            <div class="card-body">
+                                <p class="card-text">Hot Chocolate (S)</p>
+                                <p>₹ 205</p>
+                                <button class="btn btn-primary"
+                                    onclick="addToOrder('Hot Chocolate (S)', 205,this)">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center">
+                            <img src="images/Mocha Frappe.png" class="card-img-top" alt="Mocha Frappe">
+                            <div class="card-body">
+                                <p class="card-text">Mocha Frappe</p>
+                                <p>₹ 178</p>
+                                <button class="btn btn-primary"
+                                    onclick="addToOrder('Mocha Frappe', 178,this)">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center">
+                            <img src="images/Mocha Coffee (S).jpeg" class="card-img-top" alt="Mocha Coffee (S)">
+                            <div class="card-body">
+                                <p class="card-text">Mocha Coffee (S)</p>
+                                <p>₹ 215</p>
+                                <button class="btn btn-primary"
+                                    onclick="addToOrder('Mocha Coffee (S)', 215,this)">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center">
+                            <img src="images/Mocha Coffee (R).png" class="card-img-top" alt="Mocha Coffee (R)">
+                            <div class="card-body">
+                                <p class="card-text">Mocha Coffee (R)</p>
+                                <p>₹ 242</p>
+                                <button class="btn btn-primary"
+                                    onclick="addToOrder('Veg Pizza McPuff', 242,this)">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center">
+                            <img src="images/Berry Lemonade Regular.png" class="card-img-top"
+                                alt="Berry Lemonade Regular">
+                            <div class="card-body">
+                                <p class="card-text">Berry Lemonade Regular</p>
+                                <p>₹ 143</p>
+                                <button class="btn btn-primary"
+                                    onclick="addToOrder('Berry Lemonade Regular', 143,this)">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center">
+                            <img src="images/Chocolate Flavoured Shake.png" class="card-img-top"
+                                alt="Chocolate Flavoured Shake">
+                            <div class="card-body">
+                                <p class="card-text">Chocolate Flavoured Shake</p>
+                                <p>₹ 185</p>
+                                <button class="btn btn-primary"
+                                    onclick="addToOrder('Chocolate Flavoured Shake', 185,this)">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center">
+                            <img src="images/Strawberry Shake.png" class="card-img-top" alt="Strawberry Shake">
+                            <div class="card-body">
+                                <p class="card-text">Strawberry Shake</p>
+                                <p>₹ 185</p>
+                                <button class="btn btn-primary"
+                                    onclick="addToOrder('Strawberry Shake', 185,this)">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center">
+                            <img src="images/Sprite.png" class="card-img-top" alt="Sprite">
+                            <div class="card-body">
+                                <p class="card-text">Sprite</p>
+                                <p>₹ 103</p>
+                                <button class="btn btn-primary" onclick="addToOrder('Sprite', 103,this)">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center">
+                            <img src="images/Coke zero can.png" class="card-img-top" alt="Coke zero can">
+                            <div class="card-body">
+                                <p class="card-text">Coke zero can</p>
+                                <p>₹ 67</p>
+                                <button class="btn btn-primary"
+                                    onclick="addToOrder('Coke zero can', 67,this)">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row row-cols-2 row-cols-md-5 g-3" id="cake">
+                    <div class="col">
+                        <div class="card text-center">
+                            <img src="images/Treat Combo.png" class="card-img-top" alt="Treat Combo">
+                            <div class="card-body">
+                                <p class="card-text">Treat Combo</p>
+                                <p>₹ 171</p>
+                                <button class="btn btn-primary"
+                                    onclick="addToOrder('Treat Combo', 171,this)">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center">
+                            <img src="images/Refresh Combo.png" class="card-img-top" alt="Refresh Combo">
+                            <div class="card-body">
+                                <p class="card-text">Refresh Combo</p>
+                                <p>₹ 178</p>
+                                <button class="btn btn-primary"
+                                    onclick="addToOrder('Refresh Combo', 178,this)">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center">
+                            <img src="images/Choco Brownie.png" class="card-img-top" alt="Choco Brownie">
+                            <div class="card-body">
+                                <p class="card-text">Choco Brownie</p>
+                                <p>₹ 95</p>
+                                <button class="btn btn-primary"
+                                    onclick="addToOrder('Choco Brownie', 95,this)">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center">
+                            <img src="images/Indulge Choco Jar Dessert.png" class="card-img-top"
+                                alt="Indulge Choco Jar Dessert">
+                            <div class="card-body">
+                                <p class="card-text">Indulge Choco Jar Dessert</p>
+                                <p>₹ 120</p>
+                                <button class="btn btn-primary"
+                                    onclick="addToOrder('Indulge Choco Jar Dessert', 120,this)">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center">
+                            <img src="images/Choco Crunch Cookie.png" class="card-img-top" alt="Choco Crunch Cookie">
+                            <div class="card-body">
+                                <p class="card-text">Choco Crunch Cookie</p>
+                                <p>₹ 95</p>
+                                <button class="btn btn-primary"
+                                    onclick="addToOrder('Choco Crunch Cookie', 95,this)">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center">
+                            <img src="images/Chocochip Muffin.png" class="card-img-top" alt="Chocochip Muffin">
+                            <div class="card-body">
+                                <p class="card-text">Chocochip Muffin</p>
+                                <p>₹ 157</p>
+                                <button class="btn btn-primary"
+                                    onclick="addToOrder('Chocochip Muffin', 157,this)">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center">
+                            <img src="images/Cinnamon Raisin Cookie.png" class="card-img-top"
+                                alt="Cinnamon Raisin Cookie">
+                            <div class="card-body">
+                                <p class="card-text">Cinnamon Raisin Cookie</p>
+                                <p>₹ 95</p>
+                                <button class="btn btn-primary"
+                                    onclick="addToOrder('Cinnamon Raisin Cookie', 95,this)">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row row-cols-2 row-cols-md-5 g-3" id="dessert">
+                    <div class="col">
+                        <div class="card text-center">
+                            <img src="images/Chocolate Overload McFlurry with Oreo Small.png" class="card-img-top"
+                                alt="Chocolate Overload McFlurry with Oreo Small">
+                            <div class="card-body">
+                                <p class="card-text">Chocolate Overload McFlurry with Oreo Small</p>
+                                <p>₹ 104</p>
+                                <button class="btn btn-primary"
+                                    onclick="addToOrder('Chocolate Overload McFlurry with Oreo Small', 104,this)">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center">
+                            <img src="images/Soft Serve Hot Fudge (M).png" class="card-img-top"
+                                alt="Soft Serve Hot Fudge (M)">
+                            <div class="card-body">
+                                <p class="card-text">Soft Serve Hot Fudge (M)</p>
+                                <p>₹ 66</p>
+                                <button class="btn btn-primary"
+                                    onclick="addToOrder('Soft Serve Hot Fudge (M)', 66,this)">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center">
+                            <img src="images/Black Forest McFlurry Medium.png" class="card-img-top"
+                                alt="Black Forest McFlurry Medium">
+                            <div class="card-body">
+                                <p class="card-text">Black Forest McFlurry(M)</p>
+                                <p>₹ 139</p>
+                                <button class="btn btn-primary"
+                                    onclick="addToOrder('Black Forest McFlurry Medium', 139,this)">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center">
+                            <img src="images/McFlurry Oreo ( M ).png" class="card-img-top" alt="McFlurry Oreo ( M )">
+                            <div class="card-body">
+                                <p class="card-text">McFlurry Oreo ( M )</p>
+                                <p>₹ 120</p>
+                                <button class="btn btn-primary"
+                                    onclick="addToOrder('McFlurry Oreo ( M )', 120,this)">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center">
+                            <img src="images/Soft Serve Strawberry (M).png" class="card-img-top"
+                                alt="Soft Serve Strawberry (M)">
+                            <div class="card-body">
+                                <p class="card-text">Soft Serve Strawberry (M)</p>
+                                <p>₹ 66</p>
+                                <button class="btn btn-primary"
+                                    onclick="addToOrder('Soft Serve Strawberry (M)', 66,this)">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center">
+                            <img src="images/Brownie Hot Fudge (M).png" class="card-img-top"
+                                alt="Brownie Hot Fudge (M)">
+                            <div class="card-body">
+                                <p class="card-text">Brownie Hot Fudge (M)</p>
+                                <p>₹ 139</p>
+                                <button class="btn btn-primary"
+                                    onclick="addToOrder('Brownie Hot Fudge (M)', 139,this)">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center">
+                            <img src="images/Mcflurry Oreo ( S ).png" class="card-img-top" alt="Mcflurry Oreo ( S )">
+                            <div class="card-body">
+                                <p class="card-text">Mcflurry Oreo ( S )</p>
+                                <p>₹ 104</p>
+                                <button class="btn btn-primary"
+                                    onclick="addToOrder('Mcflurry Oreo ( S )', 104,this)">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Order Section -->
+            <div class="col-md-4 col-12 p-3 order-section bg-light">
+                <h2 class="text-center mb-4">Your Order</h2>
+                <div id="order-summary" class="order-list mb-4">
+                    <!-- Order summary will be displayed here -->
+                </div>
+                <button class="btn btn-success w-100 py-2" data-bs-toggle="modal"
+                    data-bs-target="#billModal">PAY</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bill Modal -->
+    <div class="modal fade" id="billModal" tabindex="-1" aria-labelledby="billModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title" id="billModalLabel">Your Bill</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h5>Order Summary</h5>
+                    <ul id="bill-summary" class="list-unstyled">
+                        <!-- Bill details will be inserted here -->
+                    </ul>
+                    <hr>
+                    <div class="d-flex justify-content-between">
+                        <strong>Total:</strong> <span id="total-bill">0 ₹</span>
+                    </div>
+                    <hr>
+                    <h5>Payment Options</h5>
+                    <div class="d-flex justify-content-between">
+                        <button class="btn btn-outline-secondary w-100 me-2" data-bs-toggle="modal"
+                            data-bs-target="#upi">UPI</button>
+                        <button class="btn btn-outline-secondary w-100 me-2" data-bs-toggle="modal"
+                            data-bs-target="#credit">Credit Card</button>
+                        <button class="btn btn-outline-secondary w-100 me-2" data-bs-toggle="modal" 
+                            data-bs-target="#dinein">Dine-in</button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success w-100">Select Payment Option</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- UPI Modal -->
+    <div class="modal fade" id="upi" tabindex="-1" aria-labelledby="billModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title" id="billModalLabel">Enter UPI Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="upiDetails">
+                    <p> Name: <input type="text" class="styled-input" name="payer_name"></p>
+                    <p> Mobile No.: <input type="tel" class="styled-input" name="payer_mobile" pattern="[0-9]{10}" title="Please enter a valid 10-digit mobile number" maxlength="10"></p>
+                    <p> UPI ID: <input type="text" class="styled-input" name="upi_id"></p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success w-100" onclick="confirmPayment('UPI')">Confirm UPI Payment</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Credit Card Modal -->
+    <div class="modal fade" id="credit" tabindex="-1" aria-labelledby="billModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title" id="billModalLabel">Enter Card Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="creditDetails">
+                    <p>Name: <input type="text" class="styled-input" name="payer_name"></p>
+                    <p> Mobile No.: <input type="tel" class="styled-input" name="payer_mobile" pattern="[0-9]{10}" title="Please enter a valid 10-digit mobile number" maxlength="10"></p>
+                    <p>Card No.: <input type="text" class="styled-input" name="card_number"></p>
+                    <p>CVV: <input type="text" class="styled-input" name="cvv"></p>
+                    <p>Exp. Date: <input type="date" class="styled-input" name="exp_date"></p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success w-100" onclick="confirmPayment('Credit Card')">Confirm Card Payment</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dine-in Modal -->
+    <div class="modal fade" id="dinein" tabindex="-1" aria-labelledby="billModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title" id="billModalLabel">Dine-in Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="dineinDetails">
+                    <p>Name: <input type="text" class="styled-input" name="payer_name"></p>
+                    <p> Mobile No.: <input type="tel" class="styled-input" name="payer_mobile" pattern="[0-9]{10}" title="Please enter a valid 10-digit mobile number" maxlength="10"></p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success w-100" onclick="confirmPayment('Dine-in')">Confirm Dine-in</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
